@@ -63,6 +63,7 @@ export const deleteDocument = async (req, res) => {
       .status(200)
       .json({ success: 200, message: "Document deleted successfully" });
   } catch (error) {
+    console.error("Error saving file:", err);
     res
       .status(500)
       .json({ code: 500, error: `Documnent with id ${id} not found` });
